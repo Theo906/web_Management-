@@ -16,6 +16,7 @@ function getUserInfo() {
     method: 'GET',
     url: '/my/userinfo',
     success: function (res) {
+      console.log(res);
       if (res.status !== 0) {
         return layui.layer.msg('登录失败！');
       }
@@ -27,7 +28,7 @@ function getUserInfo() {
 
 //渲染头像
 function renderAvatar(user) {
-  var name = user.username || user.nickname;
+  var name = user.nickname || user.username;
   $('#welcome').html('欢迎&nbsp;&nbsp;' + name);
   //判断
   if (user.user_pic !== null) {
