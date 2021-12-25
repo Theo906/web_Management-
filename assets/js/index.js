@@ -16,7 +16,6 @@ function getUserInfo() {
     method: 'GET',
     url: '/my/userinfo',
     success: function (res) {
-      console.log(res);
       if (res.status !== 0) {
         return layui.layer.msg('登录失败！');
       }
@@ -38,4 +37,10 @@ function renderAvatar(user) {
     $('.text_avatar').html(name[0].toUpperCase()).show();
     $('.layui-nav-img').hide();
   }
+}
+
+//发表文章时 切换类
+function hrefList() {
+  $('#artList').toggleClass('layui-this');
+  $('#artPub').toggleClass('layui-this');
 }
